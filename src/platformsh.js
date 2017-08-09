@@ -1,5 +1,6 @@
 // Decode Base64 string and parse JSON.
-const readBase64Json = (value) => {
+
+function readBase64Json(value) {
   if (!value) {
     return undefined;
   }
@@ -9,10 +10,10 @@ const readBase64Json = (value) => {
   } catch (err) {
     return undefined;
   }
-};
+}
 
 // Reads Platform.sh configuration from environment and returns a single object.
-const config = () => {
+function config() {
   if (!process.env.PLATFORM_PROJECT) {
     return false;
   }
@@ -32,7 +33,7 @@ const config = () => {
     document_root: process.env.PLATFORM_DOCUMENT_ROOT,
     port: process.env.PORT
   };
-};
+}
 
 module.exports = {
   config
